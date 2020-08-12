@@ -1,8 +1,8 @@
 import { Document } from 'mongoose';
 
-export interface IAccountHistory extends Document {
+export interface ITransaction extends Document {
+  type: number;
   amount: number;
-  transaction: number;
 }
 
 export enum Transaction {
