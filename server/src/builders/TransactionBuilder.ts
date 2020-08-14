@@ -3,13 +3,13 @@ import { ITransaction } from '@interfaces/ITransaction';
 export class TransactionBuilder {
   private readonly _transaction: ITransaction = {} as ITransaction;
 
-  type(type: number): TransactionBuilder {
-    this._transaction.type = type;
+  type(type: any): TransactionBuilder {
+    this._transaction.type = Number(type);
     return this;
   }
 
-  amount(amount: number): TransactionBuilder {
-    this._transaction.amount = amount;
+  amount(amount: any): TransactionBuilder {
+    this._transaction.amount = Number(amount);
     return this;
   }
 
