@@ -6,6 +6,7 @@ export interface ITransaction extends Document {
 }
 
 export enum Transaction {
+  Undefined,
   Rescue,
   Deposit,
   Payment,
