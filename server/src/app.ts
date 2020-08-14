@@ -21,11 +21,14 @@ class App {
   }
 
   private database(): void {
-    mongoose.connect('HEY, ADD URI HERE IN THE FUTURE', {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-      useFindAndModify: false,
-    });
+    mongoose.connect(
+      'mongodb+srv://onmistack:onmistack@cluster0-mzlt4.mongodb.net/warren?retryWrites=true&w=majority',
+      {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+        useFindAndModify: false,
+      }
+    );
   }
 
   private routes(): void {
