@@ -5,7 +5,6 @@ import { Transaction, ITransaction } from '@interfaces/ITransaction';
 export default class RescueHandler extends Handler {
   public process(account: IAccount, transaction: ITransaction): number {
     if (transaction.type === Transaction.Rescue) {
-      console.log('RESCUE');
       return account.balance - transaction.amount;
     }
 
