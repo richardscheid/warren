@@ -6,8 +6,7 @@
   "author": "richardscheid <rscheid@live.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon src/server.ts",
-    "build": "sucrase ./src -d ./dist --transforms typescript,imports"
+    "dev": "ts-node-dev -r tsconfig-paths/register src/server.ts"
   },
   "dependencies": {
     "cors": "^2.8.5",
@@ -19,7 +18,8 @@
     "@types/express": "^4.17.7",
     "@types/mongoose": "^5.7.36",
     "nodemon": "^2.0.4",
-    "sucrase": "^3.15.0",
+    "ts-node-dev": "^1.0.0-pre.57",
+    "tsconfig-paths": "^3.9.0",
     "typescript": "^3.9.7"
   }
 }
