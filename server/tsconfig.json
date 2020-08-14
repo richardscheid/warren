@@ -7,7 +7,15 @@
     "removeComments": true,
     "esModuleInterop": true,
     "strictNullChecks": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": "src",
+    "paths": {
+      "@models/*": ["models/*"],
+      "@builders/*": ["builders/*"],
+      "@services/*": ["services/*"],
+      "@interfaces/*": ["interfaces/*"],
+      "@controllers/*": ["controllers/*"]
+    }
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules"]
