@@ -7,22 +7,13 @@ import { ITransaction } from '@interfaces/ITransaction';
 import { TransactionBuilder } from '@builders/TransactionBuilder';
 
 class TransactionService {
-  private accountService: AccountService;
-
-  constructor() {
-    this.accountService = new AccountService();
-  }
-
   async findAll() {
     return await Transaction.find().sort({ createdAt: 'desc' });
   }
 
   async process(amount: any, type: any): Promise<ITransaction> {
+    const account = await Account.findOne();
     const transaction: ITransaction = this.createTransaction(amount, type);
-
-    let account = await Account.findOne();
-
-    if (!account) account = await Account.create(<IAccount>{ balance: 999.99 });
 
     this.executeTransaction(account, transaction);
 
@@ -30,7 +21,7 @@ class TransactionService {
   }
 
   private async executeTransaction(account: IAccount, trn: ITransaction) {
-    const balanceToUpdate = this.accountService.execute(account, trn);
+    const balanceToUpdate = AccountService.execute(account, trn);
 
     const filter = { _id: account._id };
     const update = <IAccount>{ balance: balanceToUpdate };

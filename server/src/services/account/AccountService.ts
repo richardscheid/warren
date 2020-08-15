@@ -1,3 +1,4 @@
+import Account from '@models/Account';
 import RescueHandler from './handlers/rescue/Rescue';
 import PaymentHandler from './handlers/payment/Payment';
 import DepositHandler from './handlers/deposit/Deposit';
@@ -5,7 +6,7 @@ import DepositHandler from './handlers/deposit/Deposit';
 import { IAccount } from '@interfaces/IAccount';
 import { ITransaction } from '@interfaces/ITransaction';
 
-export default class AccountControl {
+class AccountService {
   private rescue: RescueHandler;
   private payment: PaymentHandler;
   private deposit: DepositHandler;
@@ -19,7 +20,17 @@ export default class AccountControl {
     this.payment.setNext(this.deposit);
   }
 
+  async findOne() {
+    let account = await Account.findOne();
+
+    if (!account) account = await Account.create(<IAccount>{ balance: 0 });
+
+    return account;
+  }
+
   execute(account: IAccount, transaction: ITransaction): number {
     return this.rescue.process(account, transaction);
   }
 }
+
+export default new AccountService();
