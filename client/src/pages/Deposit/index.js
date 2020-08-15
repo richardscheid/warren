@@ -24,7 +24,7 @@ export default function Deposit({ history }) {
 
   return (
     <>
-      <div className='home-container'>
+      <div className='title-container'>
         <header>
           <h1>Depósito</h1>
         </header>
