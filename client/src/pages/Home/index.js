@@ -57,7 +57,7 @@ export default function Home({ history }) {
 
   return (
     <>
-      <div className='home-container'>
+      <div className='title-container'>
         <header>
           <h1>Warren</h1>
         </header>

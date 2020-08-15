@@ -74,3 +74,14 @@ button {
 .btn:hover {
   background: #40c745;
 }
+
+.title-container {
+  width: 100%;
+  display: flex;
+}
+
+.title-container header {
+  width: 100%;
+  text-align: center;
+  padding-bottom: 10px;
+}
