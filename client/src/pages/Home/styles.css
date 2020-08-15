@@ -6,8 +6,7 @@ ul.home-list {
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-
-  height: 480px;
+  height: 403px;
 }
 
 ul.home-list li {
