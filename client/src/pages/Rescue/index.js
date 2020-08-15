@@ -13,7 +13,7 @@ export default function Rescue({ history }) {
   async function handleSubmit(event) {
     event.preventDefault();
 
-    await api.post('/transactions', { amount, type: 2 });
+    await api.post('/transactions', { amount, type: 1 });
 
     history.push('/home');
   }
