@@ -6,7 +6,7 @@ import api from '../../services/api';
 
 import './styles.css';
 
-export default function Dashboard({ history }) {
+export default function Home({ history }) {
   const [account, setAccount] = useState('');
   const [transactions, setTransactions] = useState([]);
 
@@ -26,7 +26,7 @@ export default function Dashboard({ history }) {
     }
 
     loadAccount();
-  });
+  }, []);
 
   function getTransactionType(type) {
     return type === 1 ? 'Resgate' : type === 2 ? 'Depósito' : 'Pagamento';
@@ -34,6 +34,25 @@ export default function Dashboard({ history }) {
 
   function formatNumber(amount) {
     return new Intl.NumberFormat().format(amount);
+  }
+
+  function toDepositPage() {
+    pushTo('/deposit');
+  }
+
+  function toPaymentPage() {
+    pushTo('/payment');
+  }
+
+  function toRescuePage() {
+    pushTo('/rescue');
+  }
+
+  function pushTo(path) {
+    history.push({
+      pathname: path,
+      state: { detail: account },
+    });
   }
 
   return (
@@ -69,17 +88,17 @@ export default function Dashboard({ history }) {
       </ul>
 
       <div className='button-content'>
-        <Link to='/deposit'>
-          <button className='btn'>Depósito</button>
-        </Link>
+        <button className='btn' onClick={toDepositPage}>
+          Depósito
+        </button>
 
-        <Link to='/payment'>
-          <button className='btn'>Pagamento</button>
-        </Link>
+        <button className='btn' onClick={toPaymentPage}>
+          Pagamento
+        </button>
 
-        <Link to='/rescue'>
-          <button className='btn'>Resgate</button>
-        </Link>
+        <button className='btn' onClick={toRescuePage}>
+          Resgate
+        </button>
       </div>
     </>
   );
