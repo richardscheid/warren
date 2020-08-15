@@ -14,7 +14,7 @@ class TransactionService {
   }
 
   async findAll() {
-    return await Transaction.find();
+    return await Transaction.find().sort({ createdAt: 'desc' });
   }
 
   async process(amount: any, type: any): Promise<ITransaction> {
