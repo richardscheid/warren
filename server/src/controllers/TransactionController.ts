@@ -10,8 +10,7 @@ class TransactionController {
   }
 
   async execute(req: Request, res: Response): Promise<Response> {
-    const { amount } = req.body;
-    const { type } = req.headers;
+    const { amount, type } = req.body;
 
     try {
       await TransactionService.process(amount, type);
