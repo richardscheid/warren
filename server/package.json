@@ -6,7 +6,8 @@
   "author": "richardscheid <rscheid@live.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "ts-node-dev -r tsconfig-paths/register src/server.ts"
+    "dev": "ts-node-dev -r tsconfig-paths/register src/server.ts",
+    "test": "jest"
   },
   "dependencies": {
     "celebrate": "^12.2.0",
@@ -17,8 +18,11 @@
   "devDependencies": {
     "@types/cors": "^2.8.7",
     "@types/express": "^4.17.7",
+    "@types/jest": "^26.0.10",
     "@types/mongoose": "^5.7.36",
+    "jest": "^26.4.0",
     "nodemon": "^2.0.4",
+    "ts-jest": "^26.2.0",
     "ts-node-dev": "^1.0.0-pre.57",
     "tsconfig-paths": "^3.9.0",
     "typescript": "^3.9.7"
