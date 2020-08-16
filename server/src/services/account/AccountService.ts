@@ -16,6 +16,10 @@ class AccountService {
     this.payment = PaymentHandler;
     this.deposit = DepositHandler;
 
+    this.buildChainOfTransactions();
+  }
+
+  private buildChainOfTransactions() {
     this.rescue.setNext(this.payment);
     this.payment.setNext(this.deposit);
   }
