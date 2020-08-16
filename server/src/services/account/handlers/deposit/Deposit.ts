@@ -2,7 +2,7 @@ import Handler from '../Handler';
 import { IAccount } from '@interfaces/IAccount';
 import { Transaction, ITransaction } from '@interfaces/ITransaction';
 
-export default class DepositHandler extends Handler {
+class DepositHandler extends Handler {
   public process(account: IAccount, transaction: ITransaction): number {
     if (transaction.type === Transaction.Deposit) {
       return account.balance + transaction.amount;
@@ -11,3 +11,5 @@ export default class DepositHandler extends Handler {
     return super.process(account, transaction);
   }
 }
+
+export default new DepositHandler();

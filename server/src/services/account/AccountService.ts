@@ -7,14 +7,14 @@ import { IAccount } from '@interfaces/IAccount';
 import { ITransaction } from '@interfaces/ITransaction';
 
 class AccountService {
-  private rescue: RescueHandler;
-  private payment: PaymentHandler;
-  private deposit: DepositHandler;
+  private rescue;
+  private payment;
+  private deposit;
 
   constructor() {
-    this.rescue = new RescueHandler();
-    this.payment = new PaymentHandler();
-    this.deposit = new DepositHandler();
+    this.rescue = RescueHandler;
+    this.payment = PaymentHandler;
+    this.deposit = DepositHandler;
 
     this.rescue.setNext(this.payment);
     this.payment.setNext(this.deposit);
