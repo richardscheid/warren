@@ -57,7 +57,7 @@ export default function Home({ history }) {
 
   return (
     <>
-      <div className='title-container'>
+      <div className='image-container'>
         <img src={logo} alt='Awesome Warren' />
       </div>
 

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import api from '../../services/api';
+import logo from '../../assets/warren-logo.png';
 
 import './styles.css';
 
@@ -24,10 +25,8 @@ export default function Payment({ history }) {
 
   return (
     <>
-      <div className='title-container'>
-        <header>
-          <h1>Pagamento</h1>
-        </header>
+      <div className='image-container'>
+        <img src={logo} alt='Awesome Warren' />
       </div>
 
       <form onSubmit={handleSubmit}>
