@@ -29,9 +29,8 @@ button {
 
 .content {
   width: 100%;
-  padding: 30px;
-  margin-top: 50px;
-  border-radius: 6px;
+  padding: 0px 30px 30px 30px;
+  border-radius: 15px;
   background: #f0f0f5;
 }
 
@@ -76,11 +75,5 @@ button {
 
 .title-container {
   width: 100%;
-  display: flex;
-}
-
-.title-container header {
-  width: 100%;
   text-align: center;
-  padding-bottom: 10px;
 }

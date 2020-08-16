@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 
 import moment from 'moment';
 import api from '../../services/api';
+import logo from '../../assets/warren-logo.png';
 
 import './styles.css';
 
@@ -58,9 +58,7 @@ export default function Home({ history }) {
   return (
     <>
       <div className='title-container'>
-        <header>
-          <h1>Warren</h1>
-        </header>
+        <img src={logo} alt='Awesome Warren' />
       </div>
 
       <div className='balance-container'>
