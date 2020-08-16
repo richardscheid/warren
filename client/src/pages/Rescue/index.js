@@ -15,7 +15,7 @@ export default function Rescue({ history }) {
 
     await api.post('/transactions', { amount, type: 1 });
 
-    history.push('/home');
+    history.push('/');
   }
 
   function getAccount({ location: { state } }) {
@@ -41,7 +41,7 @@ export default function Rescue({ history }) {
         />
 
         <div className='button-content'>
-          <Link to='/home'>
+          <Link to='/'>
             <button className='btn'>Voltar</button>
           </Link>
 
