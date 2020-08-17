@@ -33,7 +33,7 @@ export default function Deposit({ history }) {
         <input
           id='amount'
           type='number'
-          min='0'
+          min='1'
           placeholder='Valor a ser depositado'
           required
           autoComplete='off'
