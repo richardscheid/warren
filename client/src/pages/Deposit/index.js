@@ -20,7 +20,7 @@ export default function Deposit({ history }) {
   }
 
   function getAccount({ location: { state } }) {
-    return state ? state.account : '';
+    return state ? state.detail : '';
   }
 
   return (
@@ -32,6 +32,8 @@ export default function Deposit({ history }) {
       <form onSubmit={handleSubmit}>
         <input
           id='amount'
+          type='number'
+          min='0'
           placeholder='Valor a ser depositado'
           required
           autoComplete='off'
@@ -39,9 +41,25 @@ export default function Deposit({ history }) {
           onChange={(event) => setAmount(event.target.value)}
         />
 
+        <div className='card-container'>
+          <div className='card'>
+            <div className='balance-content'>
+              <p>saldo atual </p>
+              <p>{`R$ ${account.balance}`}</p>
+            </div>
+          </div>
+
+          <div className='card'>
+            <div className='balance-content'>
+              <p>saldo esperado </p>
+              <p>{`R$ ${account.balance + Number(amount)}`}</p>
+            </div>
+          </div>
+        </div>
+
         <div className='button-content'>
           <Link to='/'>
-            <button className='btn'>Voltar</button>
+            <button className='btn back'>Voltar</button>
           </Link>
 
           <button className='btn' type='submit'>
