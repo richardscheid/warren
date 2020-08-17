@@ -4,8 +4,6 @@ import { Link } from 'react-router-dom';
 import api from '../../services/api';
 import logo from '../../assets/warren-logo.png';
 
-import './styles.css';
-
 export default function Payment({ history }) {
   const account = getAccount(history);
 
