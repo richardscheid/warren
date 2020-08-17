@@ -14,13 +14,18 @@ export default function Payment({ history }) {
   async function handleSubmit(event) {
     event.preventDefault();
 
+    if (amount > account.balance) {
+      alert(`Saldo insuficiente! Limite é de R$ ${account.balance}`);
+      return;
+    }
+
     await api.post('/transactions', { amount, type: 3 });
 
     history.push('/');
   }
 
   function getAccount({ location: { state } }) {
-    return state ? state.account : '';
+    return state ? state.detail : '';
   }
 
   return (
@@ -32,6 +37,8 @@ export default function Payment({ history }) {
       <form onSubmit={handleSubmit}>
         <input
           id='amount'
+          type='number'
+          min='1'
           placeholder='Valor a ser pago'
           required
           autoComplete='off'
@@ -39,9 +46,25 @@ export default function Payment({ history }) {
           onChange={(event) => setAmount(event.target.value)}
         />
 
+        <div className='card-container'>
+          <div className='card'>
+            <div className='balance-content'>
+              <p>saldo atual </p>
+              <p>{`R$ ${account.balance}`}</p>
+            </div>
+          </div>
+
+          <div className='card'>
+            <div className='balance-content'>
+              <p>saldo esperado </p>
+              <p>{`R$ ${account.balance - Number(amount)}`}</p>
+            </div>
+          </div>
+        </div>
+
         <div className='button-content'>
           <Link to='/'>
-            <button className='btn'>Voltar</button>
+            <button className='btn back'>Voltar</button>
           </Link>
 
           <button className='btn' type='submit'>
