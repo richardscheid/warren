@@ -23,6 +23,7 @@
 | src/interfaces  | Interfaces defines the syntax that the entities must have                                                |
 | src/controllers | Controllers define functions that respond to various requests                                            |
 | src/utils       | Utils define support functions that will be used to set up the application                               |
+| account/handlers| Handlers for the chain of responsibility pattern to execute different types of transactions              |
 | jest.config.js  | Used to configure Jest running tests written in TypeScript                                               |
 | package.json    | File that contains npm dependencies as well as server and test scripts                                   |
 | tsconfig.json   | Config settings for compiling server code written in TypeScript                                          |
