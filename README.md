@@ -1,7 +1,5 @@
 <p align="center">
-  <img src="images/logo.png" />
-  
-  Awesome Warren, projeto para controle de uma conta bancária. 
+  <img src="images/logo.png" />  
 </p>
 <p align="center">  
   Awesome Warren, projeto para controle de uma conta bancária. 
