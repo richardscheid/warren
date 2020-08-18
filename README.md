@@ -1,13 +1,7 @@
 <p align="center">
   <img src="images/logo.png" />
-</p>
-
-<p align="center">
-  Awesome Warren, projeto para controle de uma conta bancária, processando solicitações de depósito, resgates e pagamentos. 
-  <br/>
-  <br/>
-
-  <img src="images/home.png" />
+  
+  Awesome Warren, projeto para controle de uma conta bancária. 
 </p>
 <br/>
 
