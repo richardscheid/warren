@@ -1,8 +1,9 @@
 import cors from 'cors';
+import routes from './routes';
 import express from 'express';
 import mongoose from 'mongoose';
 
-import routes from './routes';
+import { MONGODB_URI } from './utils/secrets';
 
 class App {
   public express: express.Application;
@@ -21,14 +22,11 @@ class App {
   }
 
   private database(): void {
-    mongoose.connect(
-      'mongodb+srv://onmistack:onmistack@cluster0-mzlt4.mongodb.net/warren?retryWrites=true&w=majority',
-      {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-        useFindAndModify: false,
-      }
-    );
+    mongoose.connect(MONGODB_URI, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      useFindAndModify: false,
+    });
   }
 
   private routes(): void {

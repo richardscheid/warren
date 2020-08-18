@@ -1,3 +1,5 @@
 import app from './app';
 
-app.listen(3030);
+import { SERVER_PORT } from './utils/secrets';
+
+app.listen(SERVER_PORT);
