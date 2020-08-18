@@ -12,8 +12,20 @@ describe('Make a deposit', () => {
       .amount(10)
       .build();
 
-    const balance = DepositHandler.process(account, transaction);
+    const result = DepositHandler.process(account, transaction);
 
-    expect(balance).toBe(20);
+    expect(result).toBe(20);
+  });
+
+  it('it should validate the transaction type and not execute', () => {
+    const account = new AccountBuilder().balance(10).build();
+    const transaction = new TransactionBuilder()
+      .type(Transaction.Payment)
+      .amount(10)
+      .build();
+
+    const result = DepositHandler.process(account, transaction);
+
+    expect(result).toBe(Transaction.Undefined);
   });
 });
