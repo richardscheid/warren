@@ -4,7 +4,7 @@ import AccountService from '@services/account/AccountService';
 
 import { IAccount } from '@interfaces/IAccount';
 import { ITransaction } from '@interfaces/ITransaction';
-import { TransactionBuilder } from '@builders/TransactionBuilder';
+import { TransactionBuilder } from '@builders/transaction/TransactionBuilder';
 
 class TransactionService {
   async findAll() {

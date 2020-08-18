@@ -1,6 +1,6 @@
 import { Transaction } from '@interfaces/ITransaction';
-import { AccountBuilder } from '@builders/AccountBuilder';
-import { TransactionBuilder } from '@builders/TransactionBuilder';
+import { AccountBuilder } from '@builders/account/AccountBuilder';
+import { TransactionBuilder } from '@builders/transaction/TransactionBuilder';
 
 import PaymentHandler from './Payment';
 

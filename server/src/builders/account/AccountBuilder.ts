@@ -1,4 +1,4 @@
-import { IAccount } from '../interfaces/IAccount';
+import { IAccount } from '@interfaces/IAccount';
 
 export class AccountBuilder {
   private readonly account: IAccount = {} as IAccount;

@@ -1,5 +1,5 @@
 import { TransactionBuilder } from './TransactionBuilder';
-import { Transaction } from '../interfaces/ITransaction';
+import { Transaction } from '@interfaces/ITransaction';
 
 describe('Transaction builder', () => {
   it('should create a payment transaction', () => {
