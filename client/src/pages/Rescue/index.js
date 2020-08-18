@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import api from '../../services/api';
+import Input from '../../components/Input';
+import Button from '../../components/Button';
 import logo from '../../assets/warren-logo.png';
 
 export default function Rescue({ history }) {
@@ -33,13 +35,10 @@ export default function Rescue({ history }) {
       </div>
 
       <form onSubmit={handleSubmit}>
-        <input
+        <Input
           id='amount'
-          min='1'
           type='number'
-          placeholder='Valor a ser resgatado'
-          required
-          autoComplete='off'
+          placeholder='Valor a ser resgtado'
           value={amount}
           onChange={(event) => setAmount(event.target.value)}
         />
@@ -62,12 +61,10 @@ export default function Rescue({ history }) {
 
         <div className='button-content'>
           <Link to='/'>
-            <button className='btn back'>Voltar</button>
+            <Button className='btn back' label='Voltar' />
           </Link>
 
-          <button className='btn' type='submit'>
-            Salvar
-          </button>
+          <Button className='btn' type='submit' label='Salvar' />
         </div>
       </form>
     </>

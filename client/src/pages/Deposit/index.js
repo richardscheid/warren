@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import api from '../../services/api';
+import Input from '../../components/Input';
+import Button from '../../components/Button';
 import logo from '../../assets/warren-logo.png';
 
 export default function Deposit({ history }) {
@@ -28,13 +30,10 @@ export default function Deposit({ history }) {
       </div>
 
       <form onSubmit={handleSubmit}>
-        <input
+        <Input
           id='amount'
           type='number'
-          min='1'
           placeholder='Valor a ser depositado'
-          required
-          autoComplete='off'
           value={amount}
           onChange={(event) => setAmount(event.target.value)}
         />
@@ -57,12 +56,10 @@ export default function Deposit({ history }) {
 
         <div className='button-content'>
           <Link to='/'>
-            <button className='btn back'>Voltar</button>
+            <Button className='btn back' label='Voltar' />
           </Link>
 
-          <button className='btn' type='submit'>
-            Salvar
-          </button>
+          <Button className='btn' type='submit' label='Salvar' />
         </div>
       </form>
     </>
